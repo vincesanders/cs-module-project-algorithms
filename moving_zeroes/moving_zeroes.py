@@ -2,18 +2,12 @@
 Input: a List of integers
 Returns: a List of integers
 '''
-def moving_zeroes(arr): # Time: O(n^2) Space: O(1)
+def moving_zeroes(arr): # Time: O(n) Space: O(n)
     # Your code here
-    last_zero = 0
-    for i in range(len(arr)):
-        if arr[i] is 0:
-            # add 0 to beginning
-            arr[0] = 0
-            # shift elements right
-            for j in reversed(range(last_zero, i + 1)):
-                arr[j] = arr[j - 1]
-            last_zero += 1
-    return arr
+    no_zeros = [i for i in arr if i is not 0]
+    num_zeros = len(arr) - len(no_zeros)
+    no_zeros.extend([0] * num_zeros)
+    return no_zeros
 
 
 if __name__ == '__main__':
