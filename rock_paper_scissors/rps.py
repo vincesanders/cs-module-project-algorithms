@@ -9,21 +9,19 @@ def rock_paper_scissors(n):
     1: 'paper',
     2: 'scissors'
   }
-  permutations = []
-  if n is 0:
-    permutations.append([])
-  for _ in range(n):
-    for j in range(3):
-      permutations.append(moves[j]) # Get list of all possible permutations
-  # flip solution 90 degrees
-  solution = []
-  index = 0
-  while index < len(permutations):
+  
+  def track_permutations():
+    index = 0
+    return get_move
+  def get_move():
+    move = moves[index % 3]
+    index += 1
+    return move
+  move = track_permutations()
+  for p in range(3**n):
     round = []
     for i in range(n):
-      round.append(permutations[index])
-      index += 1
-    solution.append(round)
+      round.append(move())
 
 
   return solution
