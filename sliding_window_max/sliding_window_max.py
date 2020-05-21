@@ -13,6 +13,25 @@ def sliding_window_max(nums, k): # Time: O((n - k) * (k - 1)) Space: O(n)
             if nums[i + j] > max:
                 max = nums[i + j]
         solution.append(max)
+    # O(n) attempt
+    # max = 0
+    # second_max = float('-inf')
+    # for i in range(len(nums)): # O(n)
+    #     if i < k:
+    #         if nums[i] >= max:
+    #             second_max = max
+    #             max = nums[i]
+    #         if i == k - 1:
+    #             solution.append(max)
+    #     else:
+    #         if max is nums[i - k]:
+    #             max = second_max
+    #         elif second_max is nums[i - k]:
+    #             second_max = nums[i]
+    #         if nums[i] >= max:
+    #             second_max = max
+    #             max = nums[i]
+    #         solution.append(max)
     return solution
 
 
