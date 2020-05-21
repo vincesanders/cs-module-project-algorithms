@@ -8,18 +8,18 @@ def product_of_all_other_numbers(arr): # Time: O(2n) Space: O(1)
     num_zeros = 0
     product = 1
     nonzero_product = 1
-    for i in arr:
+    for i in arr: # O(n)
         product *= i
         if i is 0:
             num_zeros += 1
         else:
             nonzero_product *= i
     if num_zeros > 1:
-        for i in range(len(arr)):
+        for i in range(len(arr)): # O(n)
             arr[i] = 0
-        return arr
+        return arr # total O(2n)
     # multiply each number by the product O(n)
-    for i in range(len(arr)):
+    for i in range(len(arr)): # O(n)
         if product is 0 and arr[i] is not 0:
             arr[i] = 0
         elif product is 0 and arr[i] is 0:
@@ -27,7 +27,7 @@ def product_of_all_other_numbers(arr): # Time: O(2n) Space: O(1)
         else:
             local_product = product // arr[i]
             arr[i] = local_product
-    return arr
+    return arr # total O(2n)
 
 
 if __name__ == '__main__':

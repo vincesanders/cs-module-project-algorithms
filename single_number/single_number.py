@@ -2,10 +2,10 @@
 Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
-def single_number(arr):
+def single_number(arr): #O(n)
     # Your code here
     seen = {}
-    for i in range(len(arr)):
+    for i in range(len(arr)): #O(n)
         if arr[i] in seen:
             del seen[arr[i]]
         else:

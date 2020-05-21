@@ -4,9 +4,9 @@ Returns: a List of integers
 '''
 def moving_zeroes(arr): # Time: O(n) Space: O(n)
     # Your code here
-    no_zeros = [i for i in arr if i is not 0]
+    no_zeros = [i for i in arr if i is not 0] # make array with out 0's
     num_zeros = len(arr) - len(no_zeros)
-    no_zeros.extend([0] * num_zeros)
+    no_zeros.extend([0] * num_zeros) # add new array with the removed zeros
     return no_zeros
 
 
